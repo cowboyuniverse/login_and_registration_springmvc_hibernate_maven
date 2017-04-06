@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="login_and_registration_springmvc_hibernate_maven" target="1.5" />
+      <module name="login_and_registration_springmvc_hibernate_maven" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
