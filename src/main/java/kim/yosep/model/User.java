@@ -34,6 +34,9 @@ public class User implements Serializable {
     @Column(name = "email", unique = true)
     private String email;
 
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "address")
 
     @Embedded
@@ -90,11 +93,13 @@ public class User implements Serializable {
         this.role = role;
     }
 
-//	public boolean isActive() {
-//		return active;
-//	}
-//	public void setActive(boolean active) {
-//		this.active = active;
-//	}
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 }

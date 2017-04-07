@@ -20,6 +20,8 @@ import kim.yosep.model.UserAddress;
 import kim.yosep.model.dao.UserDao;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.util.List;
 //import kim.yosep.validator.UserValidator;
 
 
@@ -87,22 +89,7 @@ public class UserController {
                 country, phoneHome, phoneWork, phoneCell);
         user.setAddress(userAddress);
         models.put("user", user);
-
-//    	user = userDao.getUserByUserEmail(models.get("email", email)));
-
-
-//    	models.put("role", role.values());
-//    	user = userDao.getUser( id );
-//    	user.setLastName(lastName);
-
-//    	user.setAddress(userAddress);
-
-//        models.put( "user", userDao.getUser( id ) );
-//        models.put( "users", userDao.getUsers() );
-
         userDao.saveUser(user);
-
-
         return "user/view";
     }
 
@@ -110,19 +97,7 @@ public class UserController {
 //----------------------------------------------------------
 
 
-//    // User edit (Post)
-//    @RequestMapping(value = "/user/edit.html", method = RequestMethod.POST)
-//    public String edit( @ModelAttribute User user, BindingResult result,
-//        SessionStatus sessionStatus ){
-//
-//        userValidator.validate( user, result );
-//        if( result.hasErrors() ) return "user/edit";
-//
-//        user = userDao.saveUser( user );
-//
-//        sessionStatus.setComplete();
-//        return "redirect:list.html";
-//    }
+
 
     // To add new User (Get)
     @RequestMapping(value = "/user/add", method = RequestMethod.GET)
@@ -159,5 +134,38 @@ public class UserController {
         userDao.delete(user);
         return "redirect:list.html";
     }
+
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(ModelMap models) {
+
+        models.put("user", new User());
+        return "login";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(@ModelAttribute User user, ModelMap models,
+                        HttpSession session) {
+
+        List<User> users = userDao.getUsers();
+        for (User validUser : users) {
+            if (validUser.getEmail().equals(user.getEmail())
+                    && validUser.getPassword().equals(user.getPassword())) {
+
+                session.setAttribute("sessionUser", validUser);
+//                switch (validUser.getClass().getSimpleName()) {
+//                    case "Student":
+//                        return "redirect:/student/home.html";
+//                    case "Staff":
+//                        return "redirect:/staff/home.html";
+//                    case "Administrator":
+//                        return "redirect:/administrator/home.html";
+//                }
+                return "redirect:/user/list";
+            }
+        }
+        return "login";
+    }
+
 
 }
