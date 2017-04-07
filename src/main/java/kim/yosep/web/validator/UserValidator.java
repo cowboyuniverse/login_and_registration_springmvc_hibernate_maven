@@ -4,7 +4,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import kim.yosep.models.User;
+import kim.yosep.model.User;
 
 @Component
 public class UserValidator implements Validator {
