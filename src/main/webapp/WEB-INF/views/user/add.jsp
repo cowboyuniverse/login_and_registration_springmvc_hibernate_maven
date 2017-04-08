@@ -55,7 +55,7 @@ body {
 									class="icon-bar"></span> <span class="icon-bar"></span> <span
 									class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="/formbuilder/">Formbuilder</a>
+							<a class="navbar-brand" href="/">Login and Registration</a>
 						</div>
 						<div id="navbar" class="navbar-collapse ">
 							<ul class="nav navbar-nav">
@@ -91,26 +91,33 @@ body {
                           </div>
                       <br><br>
                     </fieldset>
+					 <fieldset>
+						 <label for="email" class="col-xs-2 control-label">Email</label>
+						 <div class="col-xs-3">
+							 <input type="email" name="email" class="form-control" id="email"
+									placeholder="email" value="${user.email }">
+						 </div>
+					 </fieldset>
+					 <fieldset>
+						 <label for="password" class="col-xs-2 control-label">Password</label>
+						 <div class="col-xs-3">
+							 <input type="text" class="form-control" id="password"
+									name="password" value="${user.password}" >
+						 </div>
+					 </fieldset>
 
 					<fieldset>
 							<label for="firstName" class="col-xs-2 control-label">First Name</label>
 							<div class="col-xs-3">
 								<input type="text" class="form-control" id="firstName"
-									name="firstName" value="${user.firstName}" >
+									name="firstName" value="${user.firstName}" placeholder="First Name" >
 							</div>
 					</fieldset>
 					<fieldset>
 							<label for="lastName" class="col-xs-2 control-label">Last Name</label>
 							<div class="col-xs-3">
 								<input type="text" class="form-control" id="lastName"
-									name="lastName" value="${user.lastName}" >
-							</div>
-					</fieldset>
-					<fieldset>
-							<label for="email" class="col-xs-2 control-label">Email</label>
-							<div class="col-xs-3">
-								<input type="email" name="email" class="form-control" id="email"
-									placeholder="email" value="${user.email }">
+									name="lastName" value="${user.lastName}" placeholder="Last Name" >
 							</div>
 					</fieldset>
 					<fieldset>

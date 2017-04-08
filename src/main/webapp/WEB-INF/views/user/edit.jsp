@@ -55,7 +55,7 @@ body {
 									class="icon-bar"></span> <span class="icon-bar"></span> <span
 									class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="/formbuilder/">Formbuilder</a>
+							<a class="navbar-brand" href="/">Login and Registration</a>
 						</div>
 						<div id="navbar" class="navbar-collapse ">
 							<ul class="nav navbar-nav">

@@ -15,8 +15,47 @@
 <body>
 <div class="container">
 
-    <header> </header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                        aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                    <!-- Fixed navbar -->
+                    <nav class="navbar navbar-default navbar-fixed-top">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed"
+                                        data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                                        aria-controls="navbar">
+                                    <span class="sr-only">Toggle navigation</span> <span
+                                        class="icon-bar"></span> <span class="icon-bar"></span> <span
+                                        class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="/">Login and Registration</a>
+                            </div>
+                            <div id="navbar" class="navbar-collapse ">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/user/list">Users</a></li>
+                                    <li><a href="/user/add" class="btn btn-secondary"> <span
+                                            class="glyphicon glyphicon-plus"></span> ADD NEW USER
+                                    </a>
+                                    </li>
 
+                                    <li><a href="/login">LOGIN<span class="sr-only">(current)</span></a></li>
+                                </ul>
+                            </div>
+                            <!--/.nav-collapse -->
+                        </div>
+                    </nav>
+
+                    <!-- end of nav -->
+<br><br><br>
     <section>
         <form class="form-signin" action="login" method="post">
             <h2 class="form-signin-heading text-center">Please sign in</h2>
@@ -26,7 +65,7 @@
                 placeholder="Password" name="password" />
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign
                 in</button>
-            <a class="btn btn-lg btn-danger btn-block" href="index">Back</a>
+            <a class="btn btn-lg btn-danger btn-block" href="/">Back</a>
         </form>
     </section>
 
